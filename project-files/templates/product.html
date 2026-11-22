@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link
       href="https://fonts.googleapis.com/css?family=Megrim|Nunito+Sans:400,900"
@@ -63,12 +63,14 @@
       }
 
       .container {
-        width: 95rem;
+        width: 100%;
+        max-width: 95rem;
         margin: 0 auto;
       }
 
       .product {
-        width: 60rem;
+        width: 100%;
+        max-width: 60rem;
         margin: 0 auto;
         margin-top: 9rem;
         background: white;
@@ -261,6 +263,136 @@
 
       .not-organic {
         display: none;
+      }
+      /* ---------- Tablet (≤ 1024px) ---------- */
+      @media (max-width: 1024px) {
+        body {
+          padding: 4rem 3rem 8rem;
+        }
+
+        h1 {
+          font-size: 4.8rem;
+        }
+
+        .product {
+          margin-top: 8rem;
+        }
+      }
+
+      /* ---------- Mobile (≤ 600px) ---------- */
+      @media (max-width: 600px) {
+        body {
+          padding: 3rem 1.5rem 6rem;
+        }
+
+        h1 {
+          font-size: 3.4rem;
+          word-spacing: 0;
+        }
+
+        .product {
+          margin-top: 6rem;
+          overflow: hidden; /* safety net against sideways scrolling */
+        }
+
+        /* Smaller hero, smaller emojis, percentage-based positions */
+        .product__hero {
+          height: 16rem;
+        }
+
+        .product__emoji {
+          font-size: 10rem;
+        }
+
+        .product__emoji--1 {
+          top: -3rem;
+          left: -1rem;
+        }
+        .product__emoji--2 {
+          top: -4rem;
+          left: 22%;
+        }
+        .product__emoji--3 {
+          top: -3rem;
+          right: 28%;
+        }
+        .product__emoji--4 {
+          top: -3rem;
+          right: 0;
+        }
+        .product__emoji--5 {
+          bottom: -6rem;
+          left: 38%;
+        }
+        .product__emoji--6 {
+          bottom: -5rem;
+          left: 5%;
+        }
+        .product__emoji--7 {
+          bottom: -8rem;
+          right: 25%;
+        }
+        .product__emoji--8 {
+          bottom: -5rem;
+          right: -1rem;
+        }
+        .product__emoji--9 {
+          top: -5rem;
+          left: 40%;
+        }
+
+        /* Pull the badge inside the card */
+        .product__organic {
+          top: 1.5rem;
+          right: 1.5rem;
+          height: 8rem;
+          width: 8rem;
+        }
+
+        .product__organic h5 {
+          font-size: 1.4rem;
+        }
+
+        .product__back:link,
+        .product__back:visited {
+          top: 1.5rem;
+          left: 1.5rem;
+          font-size: 1.3rem;
+          padding: 0.2rem 1.5rem;
+        }
+
+        .product__name {
+          font-size: 2.8rem;
+        }
+
+        .product__details {
+          padding: 3rem 2rem;
+          font-size: 1.6rem;
+        }
+
+        .product__description {
+          padding: 3rem 2rem;
+          font-size: 1.5rem;
+        }
+
+        /* No scale, so the button doesn't overflow the card */
+        .product__link:link,
+        .product__link:visited,
+        .product__link:hover,
+        .product__link:active {
+          transform: skewX(-20deg);
+        }
+      }
+
+      /* ---------- Very small phones (≤ 400px) ---------- */
+      @media (max-width: 400px) {
+        .product__details {
+          grid-template-columns: 1fr;
+        }
+
+        h1 {
+          font-size: 2.8rem;
+        }
       }
     </style>
   </head>

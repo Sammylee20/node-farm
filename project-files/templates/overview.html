@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link
       href="https://fonts.googleapis.com/css?family=Megrim|Nunito+Sans:400,900"
@@ -63,7 +63,8 @@
       }
 
       .container {
-        width: 95rem;
+        width: 100%;
+        max-width: 95rem;
         margin: 0 auto;
       }
 
@@ -183,6 +184,140 @@
 
       .not-organic {
         display: none;
+      }
+      /* ---------- Tablet (≤ 1024px) ---------- */
+      @media (max-width: 1024px) {
+        body {
+          padding: 4rem 3rem 8rem;
+        }
+
+        h1 {
+          font-size: 4.8rem;
+        }
+
+        .cards-container {
+          margin-top: 6rem;
+        }
+
+        .card {
+          margin-bottom: 4rem;
+        }
+
+        .card__emoji {
+          font-size: 4.5rem;
+          padding: 1rem 4rem 0.5rem 1rem;
+        }
+
+        .card__title-box {
+          padding: 0 2rem;
+        }
+
+        .card__title {
+          font-size: 2.6rem;
+        }
+
+        .card__detail {
+          font-size: 1.5rem;
+          padding: 1.25rem;
+        }
+
+        .card__detail--organic,
+        .card__detail--price {
+          font-size: 1.6rem;
+        }
+
+        .card__link:link,
+        .card__link:visited {
+          font-size: 1.4rem;
+          padding: 2rem;
+        }
+      }
+
+      /* ---------- Mobile (≤ 600px) ---------- */
+      @media (max-width: 600px) {
+        body {
+          padding: 3rem 1.5rem 6rem;
+        }
+
+        h1 {
+          font-size: 3.4rem;
+          word-spacing: 0;
+        }
+
+        .cards-container {
+          margin-top: 4rem;
+        }
+
+        /* Drop the skew and stack the card vertically */
+        .card {
+          flex-direction: column;
+          transform: none;
+          margin-bottom: 3rem;
+          box-shadow: 0 1rem 3rem 0.5rem rgba(0, 0, 0, 0.15);
+        }
+
+        .card:hover {
+          transform: none;
+          box-shadow: 0 1rem 3rem 0.5rem rgba(0, 0, 0, 0.15);
+        }
+
+        /* Remove the counter-skews since the card is no longer skewed */
+        .card__emoji,
+        .card__title,
+        .card__detail,
+        .card__link span {
+          transform: none;
+        }
+
+        .card__emoji {
+          font-size: 4rem;
+          padding: 1rem 2rem 0.5rem 1.5rem;
+          background: #fafafa;
+        }
+
+        .card__title-box {
+          margin-right: 0;
+          padding: 1.25rem 2rem;
+        }
+
+        .card__title {
+          font-size: 2.4rem;
+        }
+
+        /* Details become a wrapping row */
+        .card__details {
+          flex-wrap: wrap;
+        }
+
+        .card__detail-box {
+          flex: 1 1 50%;
+          border-right: none;
+          border-bottom: 1px solid #ddd;
+          justify-content: center;
+        }
+
+        .card__detail-box:last-child {
+          border-bottom: none;
+        }
+
+        .card__detail {
+          font-size: 1.5rem;
+          padding: 1.25rem 1rem;
+          text-align: center;
+        }
+
+        .card__link:link,
+        .card__link:visited {
+          padding: 1.75rem;
+          width: 100%;
+        }
+      }
+
+      /* ---------- Touch devices: no hover scale ---------- */
+      @media (hover: none) {
+        .card:hover {
+          transform: skewX(-20deg);
+        }
       }
     </style>
   </head>
