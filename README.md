@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Node Farm
 
 Node Farm is a small product-catalog website built with Node.js's built-in HTTP
@@ -65,3 +66,7 @@ For example, `/product?id=0` displays the first product in the catalog.
 │       └── product.html              # Product detail page template
 └── README.md
 ```
+=======
+# node-farm
+Node Farm is a server-rendered web app built with vanilla Node.js (no frameworks). It reads product data from JSON, fills HTML templates dynamically, and serves overview and product detail pages through a custom-built router.
+>>>>>>> ccb00a2e8f3acc10c6c15577473ca3852dc7a16c
